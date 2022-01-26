@@ -1,0 +1,264 @@
+:root{
+    --blue: #00ddff;
+    --purple: #aa55ee;
+    --pink: #ff33ee;
+    --darkBlue: #083154;
+    --lightPurple: #ccb2e5;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(91, 91, 91);
+}
+header{
+    font-size: 50px;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(var(--darkBlue), var(--pink)) ;
+}
+
+#NavigationBar {
+    text-decoration: none;
+    position: relative;
+    float: left;
+    border-radius: 15px ;
+    background: var(--darkBlue);
+    color: white;
+    margin: 10px;
+    width: 15%;
+    min-width: 180px;
+    padding-bottom: 12px;
+    padding-left: 0;
+    padding-top: 12px;
+}
+
+.link{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.PageContainer {
+    min-height: 100vh;
+    min-width: 100vw;
+    align-items: start;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 0;
+    padding-bottom: 12px;
+    background: linear-gradient(var(--lightPurple), var(--purple));
+}
+
+input, textarea{
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    padding-left: 7px;
+}
+
+input:focus{
+    outline: none;
+}
+
+button{
+    padding: 5px;
+    border-radius: 5px;
+    margin: 9px;
+}
+
+#inputAndButtonsContainer{
+    background: var(--darkBlue);
+    width: 200px;
+    height: 108px;
+    margin-left: calc(50% - 100px);
+    margin-top: 60px;
+}
+
+#loginInput {
+    border-radius: 10px 10px 10px 0;
+}
+#signupInput{
+    border-radius: 10px 10px 0 10px;
+}
+
+.Mode{
+    border:none;
+    background: transparent;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    margin: -3.25px;
+    padding: 10px;
+}
+
+textarea{
+    width: 350px;
+    height: 125px;
+    border: none;
+    margin-top: 15px;
+}
+textarea:focus{
+    outline: none;
+}
+
+select{
+    padding: 5px;
+    border-radius: 7px;
+}
+select:focus{
+    outline: none;
+}
+
+.message {
+    box-shadow: 0 0 0 10px var(--darkBlue);
+    border-radius: 10px;
+    margin: 0 15px 25px 25%;
+    width: 50%;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.errorMessage{
+    border-radius: 10px;
+    border: solid 4px red;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 12px;
+}
+
+#newMessageContainer{
+    text-align: start;
+    width: 40%;
+    margin-left: 30%;
+}
+
+
+
+
+
+/*Navigation bar effects*/
+.linkText::after, .active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    border-bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--purple), var(--pink));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s ease-in-out;
+}
+
+.active ::after {
+    transform: scaleX(1);
+}
+
+.linkText{
+    transition: padding-left .5s;
+    color: rgba(255,255,255,0.3);
+}
+
+.linkText:hover {
+    padding-left: 20px;
+}
+
+.linkText:hover::after{
+    transform: scaleX(1) ;
+}
+
+/*.active .linkText {*/
+/*  color: transparent;*/
+/*  background-image: linear-gradient(90deg, var(--blue), var(--purple), var(--pink));*/
+/*  background-clip: text;*/
+/*}*/
+
+
+.active .linkText{
+    color: transparent;
+    background-clip: text;
+    animation: textAnimation ease-in-out 3s;
+    animation-iteration-count: infinite;
+    padding-left: 20px;
+}
+@keyframes textAnimation {
+    0%  {background-color: var(--blue)}
+    33%  {background-color: var(--purple)}
+    66%  {background-color: var(--pink)}
+    100% {background-color: var(--blue)}
+
+}
+
+
+.sale{
+    border: 5px solid var(--darkBlue);
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.SalesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /*display: grid;*/
+    /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+}
+
+
+
+.notificationContainer{
+    position: fixed;
+    right: 30px;
+}
+#numberOfNotifications {
+    font-size: large;
+    position: absolute;
+    left: 33px;
+}
+
+input {
+    accent-color: var(--pink);
+}
+
+#searchBox{
+    background: var(--darkBlue);
+    color: white;
+}
+::placeholder{
+    color: white;
+}
+
+::selection{
+    background: var(--blue);
+    color: white;
+}
+
+.centerText{
+    text-align: left;
+    margin-left: 42.5%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 160px;
+    z-index: 1;
+    background: white;
+}
+
+.notification{
+    width: 300px;
+    box-shadow: 0 0 0 2px var(--darkBlue);
+}
+
+.show{
+    display: block;
+}
