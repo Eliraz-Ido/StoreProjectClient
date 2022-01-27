@@ -5,7 +5,7 @@ let enterCode = 13;
 
 const serverPath = "http://localhost:8989";
 const blue = "#083154";
-
+const timeToCleanThePage = 4000;
 class LoginPage extends React.Component {
     state = {
         isLoginMode: true,
@@ -116,7 +116,7 @@ class LoginPage extends React.Component {
                                     errorMessage: "That Username Does Not Exists! Try Again Or Click The Sign Up Button",
                                 })
                                 document.getElementById("username").focus();
-                                setTimeout(() => this.cleanPage(), 4000)
+                                setTimeout(() => this.cleanPage(), timeToCleanThePage)
                             }
                         })
                 }
@@ -136,7 +136,6 @@ class LoginPage extends React.Component {
                         username: "",
                         password: "",
                         usernameIsTaken: true,
-                        validPassword: true,
                         errorMessage: "This user is Taken! Please try another one"
                     })
                     document.getElementById("username").focus();

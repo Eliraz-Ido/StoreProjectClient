@@ -8,7 +8,8 @@ class NavigationBar extends React.Component {
         links: [{ title: "Dashboard", path: "/dashboard" },
             { title: "Shops", path: "/shops" },
             { title: "Search", path: "/search" },
-            { title: "Settings", path: "/settings" }
+            { title: "Settings", path: "/settings" },
+            { title: "Add Sale", path: "/addSale" }
         ]
     }
 

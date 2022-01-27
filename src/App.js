@@ -13,9 +13,11 @@ import ShopsPage from "./Pages/ShopsPage";
 import SearchPage from "./Pages/SearchPage";
 import axios from "axios";
 import {IoIosNotificationsOutline} from "react-icons/io";
+import AddSalePage from "./Pages/AddSalePage";
 
 const serverPath = "localhost:8989";
 const emptyArray = 0;
+const closeNotificationTime = 3000;
 
 
 class App extends React.Component {
@@ -42,8 +44,9 @@ class App extends React.Component {
         this.ws.onmessage = (message) => {
             let notifications = this.state.notifications;
             if(!notifications.includes(JSON.parse(message.data).notification)) {
-                notifications.push((JSON.parse(message.data).notification));
+                notifications.unshift((JSON.parse(message.data).notification));
                 this.showNotifications();
+                setTimeout(()=> this.showNotifications(), closeNotificationTime)
             }
             this.setState({
                 notifications: notifications
@@ -136,6 +139,7 @@ class App extends React.Component {
                                 <Route path={"/shops"} component={ShopsPage} exact={true}/>
                                 <Route path={"/shops/:shopId"} component={ShopComponent} exact={true}/>
                                 <Route path={"/settings"} component={SettingsPage} exact={true}/>
+                                <Route path={"/addSale"} component={AddSalePage} exact={true}/>
                             </div>
                             :
                             <div className={"PageContainer"}>
