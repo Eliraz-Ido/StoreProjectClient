@@ -17,7 +17,7 @@ import AddSalePage from "./Pages/AddSalePage";
 
 const serverPath = "localhost:8989";
 const emptyArray = 0;
-const closeNotificationTime = 3000;
+const closeNotificationTime = 4000;
 
 
 class App extends React.Component {
