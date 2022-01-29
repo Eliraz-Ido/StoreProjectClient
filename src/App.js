@@ -18,6 +18,7 @@ import AddSalePage from "./Pages/AddSalePage";
 const serverPath = "localhost:8989";
 const emptyArray = 0;
 const closeNotificationTime = 4000;
+const iconSize = "40px"
 
 
 class App extends React.Component {
@@ -113,7 +114,7 @@ class App extends React.Component {
                                 <NavigationBar removeTokenFromApp={this.removeToken}/>
 
                                 <div className={"notificationContainer"} onClick={this.showNotifications}>
-                                    <IoIosNotificationsOutline size={"40px"}/>
+                                    <IoIosNotificationsOutline size={iconSize}/>
                                     <span id={"numberOfNotifications"}>{this.state.notifications.length}</span>
                                     <div id={"notificationDropdown"} className={"dropdown-content"}>
                                         {
