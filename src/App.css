@@ -4,11 +4,6 @@
     --pink: #ff33ee;
     --darkBlue: #083154;
     --lightPurple: #ccb2e5;
-    --a: #fc6cea;
-    --b: #db89ff;
-    --c: #ecd4e9;
-    --d: #083154;
-    --e: #ccb2e5;
 }
 *{
     margin: 0;
@@ -54,8 +49,7 @@ header{
     font-weight: 500;
     margin-left: 0;
     padding-bottom: 12px;
-    /*background: linear-gradient(var(--lightPurple), var(--purple));*/
-    background: radial-gradient(var(--a),var(--b));
+    background: linear-gradient(var(--lightPurple), var(--purple));
 }
 
 input, textarea{
@@ -67,6 +61,10 @@ input, textarea{
 
 input:focus{
     outline: none;
+}
+
+#username::placeholder, #password::placeholder{
+    color: var(--darkBlue);
 }
 
 button{
